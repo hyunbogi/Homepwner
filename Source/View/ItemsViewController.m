@@ -34,15 +34,30 @@
                                        reuseIdentifier:@"UITableViewCell"] autorelease];
     }
     
-    Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[p description]];
+    if ([indexPath section] == 0) {
+        Possession *p = [[[PossessionStore defaultStore] possessionsOver50Dollars] objectAtIndex:[indexPath row]];
+        [[cell textLabel] setText:[p description]];
+    }
+    else {
+        Possession *p = [[[PossessionStore defaultStore] possessionsUnder50Dollars] objectAtIndex:[indexPath row]];
+        [[cell textLabel] setText:[p description]];
+    }
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [[[PossessionStore defaultStore] allPossessions] count];
+    if (section == 0) {
+        return [[[PossessionStore defaultStore] possessionsOver50Dollars] count];
+    }
+    else {
+        return [[[PossessionStore defaultStore] possessionsUnder50Dollars] count];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 
 @end

@@ -31,19 +31,29 @@ static PossessionStore *defaultStore_ = nil;
 
     self = [super init];
     if (self) {
-        allPossessions_ = [[NSMutableArray alloc] init];
+        possessionsOver50Dollars_ = [[NSMutableArray alloc] init];
+        possessionsUnder50Dollars_ = [[NSMutableArray alloc] init];
     }
     
     return self;
 }
 
-- (NSArray *)allPossessions {
-    return allPossessions_;
+- (NSArray *)possessionsOver50Dollars {
+    return possessionsOver50Dollars_;
+}
+
+- (NSArray *)possessionsUnder50Dollars {
+    return possessionsUnder50Dollars_;
 }
 
 - (Possession *)createPossession {
     Possession *p = [Possession randomPossession];
-    [allPossessions_ addObject:p];
+    if ([p valueInDollars] > 50) {
+        [possessionsOver50Dollars_ addObject:p];
+    }
+    else {
+        [possessionsUnder50Dollars_ addObject:p];
+    }
     
     return p;
 }

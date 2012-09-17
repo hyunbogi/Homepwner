@@ -10,12 +10,14 @@
 #import "Possession.h"
 
 @interface PossessionStore : NSObject {
-    NSMutableArray *allPossessions_;
+    NSMutableArray *possessionsOver50Dollars_;
+    NSMutableArray *possessionsUnder50Dollars_;
 }
 
 + (PossessionStore *)defaultStore;
 
-- (NSArray *)allPossessions;
+- (NSArray *)possessionsOver50Dollars;
+- (NSArray *)possessionsUnder50Dollars;
 - (Possession *)createPossession;
 
 @end
