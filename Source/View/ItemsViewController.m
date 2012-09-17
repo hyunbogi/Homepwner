@@ -26,6 +26,30 @@
     return [self init];
 }
 
+- (UIView *)headerView {
+    if (!headerView_) {
+        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
+                                      owner:self
+                                    options:nil];
+    }
+    return headerView_;
+}
+
+- (IBAction)addNewPossession:(id)sender {
+    
+}
+
+- (IBAction)toggleEditingMode:(id)sender {
+    if ([self isEditing]) {
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        [self setEditing:NO animated:YES];
+    }
+    else {
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        [self setEditing:YES animated:YES];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
@@ -43,6 +67,16 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     return [[[PossessionStore defaultStore] allPossessions] count];
+}
+
+- (UIView *)tableView:(UITableView *)tableView
+        viewForHeaderInSection:(NSInteger)section {
+    return [self headerView];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+        heightForHeaderInSection:(NSInteger)section {
+    return [[self headerView] bounds].size.height;
 }
 
 @end

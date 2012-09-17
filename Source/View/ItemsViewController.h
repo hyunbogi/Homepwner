@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ItemsViewController : UITableViewController
+@interface ItemsViewController : UITableViewController {
+    IBOutlet UIView *headerView_;
+}
+
+- (UIView *)headerView;
+- (IBAction)addNewPossession:(id)sender;
+- (IBAction)toggleEditingMode:(id)sender;
 
 @end

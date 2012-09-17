@@ -17,6 +17,7 @@
 		1FE4D9451607453700DA2F83 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D9441607453700DA2F83 /* ItemsViewController.m */; };
 		1FE4D94B1607468500DA2F83 /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D94A1607468500DA2F83 /* Possession.m */; };
 		1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D94E160746E700DA2F83 /* PossessionStore.m */; };
+		1FE4D95516075C7B00DA2F83 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D95416075C7B00DA2F83 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1FE4D94A1607468500DA2F83 /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Possession.m; path = Source/Possession.m; sourceTree = "<group>"; };
 		1FE4D94D160746E700DA2F83 /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PossessionStore.h; path = Source/Store/PossessionStore.h; sourceTree = "<group>"; };
 		1FE4D94E160746E700DA2F83 /* PossessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PossessionStore.m; path = Source/Store/PossessionStore.m; sourceTree = "<group>"; };
+		1FE4D95416075C7B00DA2F83 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HeaderView.xib; path = Resource/Xib/HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				1FE4D938160743C900DA2F83 /* MainWindow.xib */,
+				1FE4D95416075C7B00DA2F83 /* HeaderView.xib */,
 			);
 			name = Xib;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			files = (
 				1FE4D937160743BB00DA2F83 /* InfoPlist.strings in Resources */,
 				1FE4D939160743C900DA2F83 /* MainWindow.xib in Resources */,
+				1FE4D95516075C7B00DA2F83 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +345,7 @@
 				1FE4D92D1607432800DA2F83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
