@@ -28,8 +28,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                    reuseIdentifier:@"UITableViewCell"] autorelease];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    if (!cell) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                       reuseIdentifier:@"UITableViewCell"] autorelease];
+    }
+    
     Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:[p description]];
     
