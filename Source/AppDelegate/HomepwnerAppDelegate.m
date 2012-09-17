@@ -7,12 +7,17 @@
 //
 
 #import "AppDelegate/HomepwnerAppDelegate.h"
+#import "View/ItemsViewController.h"
 
 @implementation HomepwnerAppDelegate
 
 @synthesize window = window_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ItemsViewController *ivc = [[ItemsViewController alloc] init];
+    
+    [[self window] setRootViewController:ivc];
+    [ivc release];
 
     [[self window] makeKeyAndVisible];
     return YES;

@@ -14,6 +14,9 @@
 		1FE4D939160743C900DA2F83 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FE4D938160743C900DA2F83 /* MainWindow.xib */; };
 		1FE4D93F160743E300DA2F83 /* HomepwnerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D93E160743E300DA2F83 /* HomepwnerAppDelegate.m */; };
 		1FE4D941160743EA00DA2F83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D940160743EA00DA2F83 /* main.m */; };
+		1FE4D9451607453700DA2F83 /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D9441607453700DA2F83 /* ItemsViewController.m */; };
+		1FE4D94B1607468500DA2F83 /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D94A1607468500DA2F83 /* Possession.m */; };
+		1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE4D94E160746E700DA2F83 /* PossessionStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,12 @@
 		1FE4D93D160743E300DA2F83 /* HomepwnerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomepwnerAppDelegate.h; path = Source/AppDelegate/HomepwnerAppDelegate.h; sourceTree = "<group>"; };
 		1FE4D93E160743E300DA2F83 /* HomepwnerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomepwnerAppDelegate.m; path = Source/AppDelegate/HomepwnerAppDelegate.m; sourceTree = "<group>"; };
 		1FE4D940160743EA00DA2F83 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		1FE4D9431607453700DA2F83 /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsViewController.h; path = Source/View/ItemsViewController.h; sourceTree = "<group>"; };
+		1FE4D9441607453700DA2F83 /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsViewController.m; path = Source/View/ItemsViewController.m; sourceTree = "<group>"; };
+		1FE4D9491607468500DA2F83 /* Possession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Possession.h; path = Source/Possession.h; sourceTree = "<group>"; };
+		1FE4D94A1607468500DA2F83 /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Possession.m; path = Source/Possession.m; sourceTree = "<group>"; };
+		1FE4D94D160746E700DA2F83 /* PossessionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PossessionStore.h; path = Source/Store/PossessionStore.h; sourceTree = "<group>"; };
+		1FE4D94E160746E700DA2F83 /* PossessionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PossessionStore.m; path = Source/Store/PossessionStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +84,12 @@
 		1FE4D92E1607438300DA2F83 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				1FE4D9491607468500DA2F83 /* Possession.h */,
 				1FE4D940160743EA00DA2F83 /* main.m */,
+				1FE4D94A1607468500DA2F83 /* Possession.m */,
 				1FE4D9301607439200DA2F83 /* AppDelegate */,
+				1FE4D94C160746BC00DA2F83 /* Store */,
+				1FE4D9421607451400DA2F83 /* View */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -131,6 +144,24 @@
 				1FE4D935160743BB00DA2F83 /* InfoPlist.strings */,
 			);
 			name = "en,lproj";
+			sourceTree = "<group>";
+		};
+		1FE4D9421607451400DA2F83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1FE4D9431607453700DA2F83 /* ItemsViewController.h */,
+				1FE4D9441607453700DA2F83 /* ItemsViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1FE4D94C160746BC00DA2F83 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				1FE4D94D160746E700DA2F83 /* PossessionStore.h */,
+				1FE4D94E160746E700DA2F83 /* PossessionStore.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +229,9 @@
 			files = (
 				1FE4D93F160743E300DA2F83 /* HomepwnerAppDelegate.m in Sources */,
 				1FE4D941160743EA00DA2F83 /* main.m in Sources */,
+				1FE4D9451607453700DA2F83 /* ItemsViewController.m in Sources */,
+				1FE4D94B1607468500DA2F83 /* Possession.m in Sources */,
+				1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
