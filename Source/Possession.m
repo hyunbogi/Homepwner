@@ -10,7 +10,11 @@
 
 @implementation Possession
 
-@synthesize possessionName, serialNumber, valueInDollars, dateCreated;
+@synthesize possessionName = possessionName_;
+@synthesize serialNumber = serialNumber_;
+@synthesize valueInDollars = valueInDollars_;
+@synthesize dateCreated = dateCreated_;
+@synthesize imageKey = imageKey_;
 
 + (id)randomPossession {
     NSArray *randomAdjectiveList = [NSArray arrayWithObjects:@"Fluffy", @"Rusty", @"Shiny", nil];
@@ -43,7 +47,7 @@
         [self setPossessionName:name];
         [self setSerialNumber:sNumber];
         [self setValueInDollars:value];
-        dateCreated = [[NSDate alloc] init];
+        dateCreated_ = [[NSDate alloc] init];
     }
     return self;
 }
@@ -56,13 +60,14 @@
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
-            possessionName, serialNumber, valueInDollars, dateCreated];
+            possessionName_, serialNumber_, valueInDollars_, dateCreated_];
 }
 
 - (void)dealloc {
-    [possessionName release];
-    [serialNumber release];
-    [dateCreated release];
+    [possessionName_ release];
+    [serialNumber_ release];
+    [dateCreated_ release];
+    [imageKey_ release];
     [super dealloc];
 }
 

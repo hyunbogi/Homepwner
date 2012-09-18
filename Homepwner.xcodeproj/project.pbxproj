@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
 		1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */; };
+		1FD34D64160889B6005AE300 /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D63160889B6005AE300 /* ImageStore.m */; };
 		1FE4D9161607432800DA2F83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9151607432800DA2F83 /* UIKit.framework */; };
 		1FE4D9181607432800DA2F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9171607432800DA2F83 /* Foundation.framework */; };
 		1FE4D91A1607432800DA2F83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9191607432800DA2F83 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 		1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDetailViewController.h; path = Source/View/ItemsDetailViewController.h; sourceTree = "<group>"; };
 		1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDetailViewController.m; path = Source/View/ItemsDetailViewController.m; sourceTree = "<group>"; };
 		1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsDetailViewController.xib; path = Resource/Xib/ItemsDetailViewController.xib; sourceTree = "<group>"; };
+		1FD34D62160889B6005AE300 /* ImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageStore.h; path = Source/Store/ImageStore.h; sourceTree = "<group>"; };
+		1FD34D63160889B6005AE300 /* ImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageStore.m; path = Source/Store/ImageStore.m; sourceTree = "<group>"; };
 		1FE4D9111607432800DA2F83 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE4D9151607432800DA2F83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FE4D9171607432800DA2F83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,6 +174,8 @@
 			children = (
 				1FE4D94D160746E700DA2F83 /* PossessionStore.h */,
 				1FE4D94E160746E700DA2F83 /* PossessionStore.m */,
+				1FD34D62160889B6005AE300 /* ImageStore.h */,
+				1FD34D63160889B6005AE300 /* ImageStore.m */,
 			);
 			name = Store;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				1FE4D94B1607468500DA2F83 /* Possession.m in Sources */,
 				1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */,
 				1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */,
+				1FD34D64160889B6005AE300 /* ImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

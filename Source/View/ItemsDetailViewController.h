@@ -7,18 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Store/ImageStore.h"
 
 @class Possession;
 
-@interface ItemsDetailViewController : UIViewController {
+@interface ItemsDetailViewController : UIViewController
+        <UINavigationControllerDelegate, UIImagePickerControllerDelegate> {
     IBOutlet UITextField *nameField_;
     IBOutlet UITextField *serialNumberField_;
     IBOutlet UITextField *valuedField_;
     IBOutlet UILabel *dateLabel_;
+    IBOutlet UIImageView *imageView_;
     
     Possession *possession_;
 }
 
 @property (nonatomic, retain) Possession *possession;
+
+- (IBAction)takePicture:(id)sender;
 
 @end

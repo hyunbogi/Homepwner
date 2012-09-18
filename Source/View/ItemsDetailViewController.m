@@ -13,6 +13,21 @@
 
 @synthesize possession = possession_;
 
+- (IBAction)takePicture:(id)sender {
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        [ipc setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else {
+        [ipc setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    [ipc setDelegate:self];
+    
+    [self presentModalViewController:ipc animated:YES];
+    [ipc release];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
@@ -27,7 +42,9 @@
     valuedField_ = nil;
     [dateLabel_ release];
     dateLabel_ = nil;
-
+    [imageView_ release];
+    imageView_ = nil;
+    
     [super viewDidUnload];
 }
 
@@ -44,6 +61,15 @@
     [dateLabel_ setText:[formatter stringFromDate:[possession_ dateCreated]]];
     
     [[self navigationItem] setTitle:[possession_ possessionName]];
+    
+    NSString *imageKey = [possession_ imageKey];
+    if (imageKey) {
+        UIImage *imageToDisplay = [[ImageStore defaultImageStore] imageForKey:imageKey];
+        [imageView_ setImage:imageToDisplay];
+    }
+    else {
+        [imageView_ setImage:nil];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -56,14 +82,39 @@
     [possession_ setValueInDollars:[[valuedField_ text] intValue]];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString *oldKey = [possession_ imageKey];
+    if (oldKey) {
+        [[ImageStore defaultImageStore] deleteImageForKey:oldKey];
+    }
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
+    CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID);
+    [possession_ setImageKey:(NSString *)newUniqueID];
+    CFRelease(newUniqueIDString);
+    CFRelease(newUniqueID);
+    
+    [[ImageStore defaultImageStore] setImage:image
+                                      forKey:[possession_ imageKey]];
+    
+    [imageView_ setImage:image];
+    
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 - (void)dealloc {
     [nameField_ release];
     [serialNumberField_ release];
     [valuedField_ release];
     [dateLabel_ release];
+    [imageView_ release];
     [possession_ release];
     
     [super dealloc];
 }
+
 
 @end
