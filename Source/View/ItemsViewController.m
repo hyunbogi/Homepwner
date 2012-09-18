@@ -23,6 +23,8 @@
         [rightBarButtonItem release];
         
         [[self navigationItem] setTitle:@"Homepwner"];
+        
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
     }
     return self;
 }
