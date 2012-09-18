@@ -28,6 +28,10 @@
     [ipc release];
 }
 
+- (IBAction)backgroundTapped:(id)sender {
+    [[self view] endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
@@ -100,9 +104,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [[ImageStore defaultImageStore] setImage:image
                                       forKey:[possession_ imageKey]];
     
-    [imageView_ setImage:image];
-    
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)dealloc {
@@ -115,6 +122,5 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     [super dealloc];
 }
-
 
 @end
