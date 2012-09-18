@@ -12,7 +12,8 @@
 @class Possession;
 
 @interface ItemsDetailViewController : UIViewController
-        <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate> {
+        <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
+        UITextFieldDelegate, UIPopoverControllerDelegate> {
     IBOutlet UITextField *nameField_;
     IBOutlet UITextField *serialNumberField_;
     IBOutlet UITextField *valuedField_;
@@ -20,6 +21,8 @@
     IBOutlet UIImageView *imageView_;
     
     Possession *possession_;
+
+    UIPopoverController *imagePickerPopover_;
 }
 
 @property (nonatomic, retain) Possession *possession;

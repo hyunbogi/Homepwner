@@ -24,7 +24,18 @@
     }
     [ipc setDelegate:self];
     
-    [self presentModalViewController:ipc animated:YES];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        imagePickerPopover_ = [[UIPopoverController alloc] initWithContentViewController:ipc];
+        [imagePickerPopover_ setDelegate:self];
+        
+        [imagePickerPopover_ presentPopoverFromBarButtonItem:sender
+                                    permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                    animated:YES];
+    }
+    else {
+        [self presentModalViewController:ipc animated:YES];
+    }
+
     [ipc release];
 }
 
@@ -109,16 +120,40 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [possession_ setImageKey:(NSString *)newUniqueIDString];
     CFRelease(newUniqueIDString);
     CFRelease(newUniqueID);
-    
+
     [[ImageStore defaultImageStore] setImage:image
                                       forKey:[possession_ imageKey]];
     
-    [self dismissModalViewControllerAnimated:YES];
+    [imageView_ setImage:image];
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        [self dismissModalViewControllerAnimated:YES];
+    }
+    else {
+        [imagePickerPopover_ dismissPopoverAnimated:YES];
+        [imagePickerPopover_ autorelease];
+        imagePickerPopover_ = nil;
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+    NSLog(@"User dismiss popover");
+    [imagePickerPopover_ autorelease];
+    imagePickerPopover_ = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        return YES;
+    }
+    else {
+        return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
+    }
 }
 
 - (void)dealloc {
