@@ -14,6 +14,16 @@
 
 - (id)init {
     self = [super initWithStyle:UITableViewStyleGrouped];
+    if (self) {
+        UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc]
+                                               initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                    target:self
+                                                                    action:@selector(addNewPossession:)];
+        [[self navigationItem] setRightBarButtonItem:rightBarButtonItem];
+        [rightBarButtonItem release];
+        
+        [[self navigationItem] setTitle:@"Homepwner"];
+    }
     return self;
 }
 

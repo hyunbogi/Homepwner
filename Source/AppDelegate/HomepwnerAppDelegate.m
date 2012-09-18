@@ -15,10 +15,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ItemsViewController *ivc = [[ItemsViewController alloc] init];
-    
-    [[self window] setRootViewController:ivc];
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:ivc];
     [ivc release];
-
+    
+    [[self window] setRootViewController:naviController];
+    [naviController release];
+    
     [[self window] makeKeyAndVisible];
     return YES;
 }
