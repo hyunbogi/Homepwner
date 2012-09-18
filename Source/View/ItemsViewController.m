@@ -33,15 +33,6 @@
     return [self init];
 }
 
-- (UIView *)headerView {
-    if (!headerView_) {
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
-    return headerView_;
-}
-
 - (IBAction)addNewPossession:(id)sender {
     [[PossessionStore defaultStore] createPossession];
     [[self tableView] reloadData];
@@ -75,16 +66,6 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     return [[[PossessionStore defaultStore] allPossessions] count];
-}
-
-- (UIView *)tableView:(UITableView *)tableView
-        viewForHeaderInSection:(NSInteger)section {
-    return [self headerView];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView
-        heightForHeaderInSection:(NSInteger)section {
-    return [[self headerView] bounds].size.height;
 }
 
 - (void)tableView:(UITableView *)tableView
