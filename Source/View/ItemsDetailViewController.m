@@ -32,6 +32,14 @@
     [[self view] endEditing:YES];
 }
 
+- (IBAction)removeImage:(id)sender {
+    NSString *imageKey = [possession_ imageKey];
+    [[ImageStore defaultImageStore] deleteImageForKey:imageKey];
+    [possession_ setImageKey:nil];
+    
+    [imageView_ setImage:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[self view] setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
