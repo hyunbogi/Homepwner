@@ -46,6 +46,16 @@
     [[self navigationItem] setTitle:[possession_ possessionName]];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[self view] endEditing:YES];
+    
+    [possession_ setPossessionName:[nameField_ text]];
+    [possession_ setSerialNumber:[serialNumberField_ text]];
+    [possession_ setValueInDollars:[[valuedField_ text] intValue]];
+}
+
 - (void)dealloc {
     [nameField_ release];
     [serialNumberField_ release];
