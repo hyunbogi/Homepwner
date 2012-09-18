@@ -52,6 +52,19 @@ static PossessionStore *defaultStore_ = nil;
     [allPossessions_ removeObjectIdenticalTo:p];
 }
 
+- (void)movePossessionAtIndex:(NSInteger)from
+                      toIndex:(NSInteger)to {
+    if (from == to) {
+        return;
+    }
+    
+    Possession *p = [allPossessions_ objectAtIndex:from];
+    [p retain];
+    [allPossessions_ removeObjectAtIndex:from];
+    [allPossessions_ insertObject:p atIndex:to];
+    [p release];
+}
+
 - (id)retain {
     return self;
 }

@@ -89,4 +89,11 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView
+        moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+               toIndexPath:(NSIndexPath *)destinationIndexPath {
+    [[PossessionStore defaultStore] movePossessionAtIndex:[sourceIndexPath row]
+                                                  toIndex:[destinationIndexPath row]];
+}
+
 @end

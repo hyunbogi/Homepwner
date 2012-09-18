@@ -18,5 +18,7 @@
 - (NSArray *)allPossessions;
 - (Possession *)createPossession;
 - (void)removePossession:(Possession *)p;
+- (void)movePossessionAtIndex:(NSInteger)from
+                      toIndex:(NSInteger)to;
 
 @end
