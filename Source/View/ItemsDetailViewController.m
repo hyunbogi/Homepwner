@@ -34,8 +34,10 @@
 
 - (IBAction)removeImage:(id)sender {
     NSString *imageKey = [possession_ imageKey];
-    [[ImageStore defaultImageStore] deleteImageForKey:imageKey];
-    [possession_ setImageKey:nil];
+    if (imageKey) {
+        [[ImageStore defaultImageStore] deleteImageForKey:imageKey];
+        [possession_ setImageKey:nil];
+    }
     
     [imageView_ setImage:nil];
 }
