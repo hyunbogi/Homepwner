@@ -97,7 +97,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     CFUUIDRef newUniqueID = CFUUIDCreate(kCFAllocatorDefault);
     CFStringRef newUniqueIDString = CFUUIDCreateString(kCFAllocatorDefault, newUniqueID);
-    [possession_ setImageKey:(NSString *)newUniqueID];
+    [possession_ setImageKey:(NSString *)newUniqueIDString];
     CFRelease(newUniqueIDString);
     CFRelease(newUniqueID);
     
