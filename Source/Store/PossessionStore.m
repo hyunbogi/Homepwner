@@ -48,6 +48,10 @@ static PossessionStore *defaultStore_ = nil;
     return p;
 }
 
+- (void)removePossession:(Possession *)p {
+    [allPossessions_ removeObjectIdenticalTo:p];
+}
+
 - (id)retain {
     return self;
 }
