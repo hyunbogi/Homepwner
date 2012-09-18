@@ -9,6 +9,7 @@
 #import "View/ItemsViewController.h"
 #import "Possession.h"
 #import "Store/PossessionStore.h"
+#import "View/ItemsDetailViewController.h"
 
 @implementation ItemsViewController
 
@@ -87,6 +88,16 @@
                toIndexPath:(NSIndexPath *)destinationIndexPath {
     [[PossessionStore defaultStore] movePossessionAtIndex:[sourceIndexPath row]
                                                   toIndex:[destinationIndexPath row]];
+}
+
+- (void)tableView:(UITableView *)tableView
+        didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ItemsDetailViewController *idvc = [[[ItemsDetailViewController alloc] init] autorelease];
+    
+    NSArray *possessions = [[PossessionStore defaultStore] allPossessions];
+    [idvc setPossession:[possessions objectAtIndex:[indexPath row]]];
+    
+    [[self navigationController] pushViewController:idvc animated:YES];
 }
 
 @end

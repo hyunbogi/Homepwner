@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
+		1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */; };
 		1FE4D9161607432800DA2F83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9151607432800DA2F83 /* UIKit.framework */; };
 		1FE4D9181607432800DA2F83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9171607432800DA2F83 /* Foundation.framework */; };
 		1FE4D91A1607432800DA2F83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE4D9191607432800DA2F83 /* CoreGraphics.framework */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDetailViewController.h; path = Source/View/ItemsDetailViewController.h; sourceTree = "<group>"; };
+		1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDetailViewController.m; path = Source/View/ItemsDetailViewController.m; sourceTree = "<group>"; };
+		1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsDetailViewController.xib; path = Resource/Xib/ItemsDetailViewController.xib; sourceTree = "<group>"; };
 		1FE4D9111607432800DA2F83 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE4D9151607432800DA2F83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1FE4D9171607432800DA2F83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +140,7 @@
 		1FE4D933160743A500DA2F83 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */,
 				1FE4D938160743C900DA2F83 /* MainWindow.xib */,
 				1FE4D95416075C7B00DA2F83 /* HeaderView.xib */,
 			);
@@ -154,6 +160,8 @@
 			children = (
 				1FE4D9431607453700DA2F83 /* ItemsViewController.h */,
 				1FE4D9441607453700DA2F83 /* ItemsViewController.m */,
+				1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */,
+				1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 				1FE4D937160743BB00DA2F83 /* InfoPlist.strings in Resources */,
 				1FE4D939160743C900DA2F83 /* MainWindow.xib in Resources */,
 				1FE4D95516075C7B00DA2F83 /* HeaderView.xib in Resources */,
+				1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +245,7 @@
 				1FE4D9451607453700DA2F83 /* ItemsViewController.m in Sources */,
 				1FE4D94B1607468500DA2F83 /* Possession.m in Sources */,
 				1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */,
+				1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
