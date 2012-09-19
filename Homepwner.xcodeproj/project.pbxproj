@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0349DE1609B88F00D0E74F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DC1609B88F00D0E74F /* Icon.png */; };
+		1F0349DF1609B88F00D0E74F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DD1609B88F00D0E74F /* Icon@2x.png */; };
 		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
 		1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */; };
 		1FD34D64160889B6005AE300 /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D63160889B6005AE300 /* ImageStore.m */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0349DC1609B88F00D0E74F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resource/Image/Icon.png; sourceTree = "<group>"; };
+		1F0349DD1609B88F00D0E74F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resource/Image/Icon@2x.png"; sourceTree = "<group>"; };
 		1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDetailViewController.h; path = Source/View/ItemsDetailViewController.h; sourceTree = "<group>"; };
 		1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDetailViewController.m; path = Source/View/ItemsDetailViewController.m; sourceTree = "<group>"; };
 		1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsDetailViewController.xib; path = Resource/Xib/ItemsDetailViewController.xib; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		1FE4D9311607439900DA2F83 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				1F0349DC1609B88F00D0E74F /* Icon.png */,
+				1F0349DD1609B88F00D0E74F /* Icon@2x.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -235,6 +241,8 @@
 				1FE4D939160743C900DA2F83 /* MainWindow.xib in Resources */,
 				1FE4D95516075C7B00DA2F83 /* HeaderView.xib in Resources */,
 				1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */,
+				1F0349DE1609B88F00D0E74F /* Icon.png in Resources */,
+				1F0349DF1609B88F00D0E74F /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
