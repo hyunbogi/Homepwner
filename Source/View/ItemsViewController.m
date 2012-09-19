@@ -35,8 +35,20 @@
 }
 
 - (IBAction)addNewPossession:(id)sender {
-    [[PossessionStore defaultStore] createPossession];
-    [[self tableView] reloadData];
+    Possession *newPossession = [[PossessionStore defaultStore] createPossession];
+    
+    ItemsDetailViewController *idvc = [[ItemsDetailViewController alloc] initForNewItem:YES];
+    [idvc setDelegate:self];
+    [idvc setPossession:newPossession];
+    
+    UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:idvc];
+    [idvc release];
+    
+    [naviController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [naviController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    
+    [self presentModalViewController:naviController animated:YES];
+    [naviController release];
 }
 
 - (IBAction)toggleEditingMode:(id)sender {
@@ -103,6 +115,10 @@
     [idvc setPossession:[possessions objectAtIndex:[indexPath row]]];
     
     [[self navigationController] pushViewController:idvc animated:YES];
+}
+
+- (void)itemsDetailViewControllerWillDismiss:(ItemsDetailViewController *)controller {
+    [[self tableView] reloadData];
 }
 
 @end

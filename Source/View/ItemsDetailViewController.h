@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Store/ImageStore.h"
+#import "Store/PossessionStore.h"
 
 @class Possession;
+@class ItemsDetailViewController;
+
+@protocol ItemsDetailViewControllerDelegate <NSObject>
+
+@optional
+- (void)itemsDetailViewControllerWillDismiss:(ItemsDetailViewController *)controller;
+
+@end
 
 @interface ItemsDetailViewController : UIViewController
         <UINavigationControllerDelegate, UIImagePickerControllerDelegate,
@@ -26,9 +35,12 @@
 }
 
 @property (nonatomic, retain) Possession *possession;
+@property (nonatomic, assign) id <ItemsDetailViewControllerDelegate> delegate;
 
 - (id)initForNewItem:(BOOL)isNew;
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
+- (IBAction)save:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end

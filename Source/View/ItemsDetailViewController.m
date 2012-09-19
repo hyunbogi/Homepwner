@@ -12,6 +12,7 @@
 @implementation ItemsDetailViewController
 
 @synthesize possession = possession_;
+@synthesize delegate;
 
 - (id)initForNewItem:(BOOL)isNew {
     self = [super initWithNibName:@"ItemsDetailViewController" bundle:nil];
@@ -72,6 +73,23 @@
 
 - (IBAction)backgroundTapped:(id)sender {
     [[self view] endEditing:YES];
+}
+
+- (IBAction)save:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+    
+    if ([delegate respondsToSelector:@selector(itemsDetailViewControllerWillDismiss:)]) {
+        [delegate itemsDetailViewControllerWillDismiss:self];
+    }
+}
+
+- (IBAction)cancel:(id)sender {
+    [[PossessionStore defaultStore] removePossession:possession_];
+    [self dismissModalViewControllerAnimated:YES];
+    
+    if ([delegate respondsToSelector:@selector(itemsDetailViewControllerWillDismiss:)]) {
+        [delegate itemsDetailViewControllerWillDismiss:self];
+    }
 }
 
 - (void)viewDidLoad {

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "View/ItemsDetailViewController.h"
 
-@interface ItemsViewController : UITableViewController
+@interface ItemsViewController : UITableViewController <ItemsDetailViewControllerDelegate>
 
 - (IBAction)addNewPossession:(id)sender;
 - (IBAction)toggleEditingMode:(id)sender;
