@@ -90,6 +90,8 @@
     if ([delegate respondsToSelector:@selector(itemsDetailViewControllerWillDismiss:)]) {
         [delegate itemsDetailViewControllerWillDismiss:self];
     }
+}
+
 - (IBAction)removeImage:(id)sender {
     NSString *imageKey = [possession_ imageKey];
     if (imageKey) {
