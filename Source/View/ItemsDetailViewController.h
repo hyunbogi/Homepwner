@@ -27,6 +27,7 @@
 
 @property (nonatomic, retain) Possession *possession;
 
+- (id)initForNewItem:(BOOL)isNew;
 - (IBAction)takePicture:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
 

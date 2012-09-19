@@ -13,6 +13,37 @@
 
 @synthesize possession = possession_;
 
+- (id)initForNewItem:(BOOL)isNew {
+    self = [super initWithNibName:@"ItemsDetailViewController" bundle:nil];
+    if (self) {
+        if (isNew) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc]
+                                         initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                         target:self
+                                         action:@selector(save:)];
+            [[self navigationItem] setRightBarButtonItem:doneItem];
+            [doneItem release];
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc]
+                                           initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                           target:self
+                                           action:@selector(cancel:)];
+            [[self navigationItem] setLeftBarButtonItem:cancelItem];
+            [cancelItem release];
+        }
+    }
+    
+    return self;
+}
+
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil {
+    @throw [NSException exceptionWithName:@"Wrong initializer"
+                                   reason:@"Use initForNewItem:"
+                                 userInfo:nil];
+    return nil;
+}
+
 - (IBAction)takePicture:(id)sender {
     UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
     

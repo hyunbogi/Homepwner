@@ -97,7 +97,7 @@
 
 - (void)tableView:(UITableView *)tableView
         didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ItemsDetailViewController *idvc = [[[ItemsDetailViewController alloc] init] autorelease];
+    ItemsDetailViewController *idvc = [[[ItemsDetailViewController alloc] initForNewItem:NO] autorelease];
     
     NSArray *possessions = [[PossessionStore defaultStore] allPossessions];
     [idvc setPossession:[possessions objectAtIndex:[indexPath row]]];
