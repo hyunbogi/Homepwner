@@ -10,6 +10,7 @@
 #import "Possession.h"
 #import "Store/PossessionStore.h"
 #import "View/ItemsDetailViewController.h"
+#import "View/HomepwnerItemCell.h"
 
 @implementation ItemsViewController
 
@@ -69,14 +70,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
+    HomepwnerItemCell *cell = (HomepwnerItemCell *)
+                              [tableView dequeueReusableCellWithIdentifier:@"HomepwnerItemCell"];
     if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:@"UITableViewCell"] autorelease];
+        cell = [[[HomepwnerItemCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                         reuseIdentifier:@"HomepwnerItemCell"] autorelease];
     }
-    
+
     Possession *p = [[[PossessionStore defaultStore] allPossessions] objectAtIndex:[indexPath row]];
-    [[cell textLabel] setText:[p description]];
+    [cell setPossession:p];
     
     return cell;
 }
