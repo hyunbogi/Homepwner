@@ -15,6 +15,8 @@
 @synthesize window = window_;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
     ItemsViewController *ivc = [[ItemsViewController alloc] init];
     UINavigationController *naviController = [[UINavigationController alloc] initWithRootViewController:ivc];
     [ivc release];
@@ -26,17 +28,25 @@
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {}
+- (void)applicationWillResignActive:(UIApplication *)application {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     [[PossessionStore defaultStore] saveChange];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {}
+- (void)applicationWillEnterForeground:(UIApplication *)application {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {}
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
     [[PossessionStore defaultStore] saveChange];
 }
 
