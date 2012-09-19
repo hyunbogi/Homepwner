@@ -33,6 +33,12 @@ static ImageStore *defaultImageStore_ = nil;
         dictionary_ = [[NSMutableDictionary alloc] init];
     }
     
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self
+           selector:@selector(clearCache:)
+               name:UIApplicationDidReceiveMemoryWarningNotification
+             object:nil];
+    
     return self;
 }
 
@@ -66,6 +72,11 @@ static ImageStore *defaultImageStore_ = nil;
     
     NSString *imagePath = pathInDocumentDirectory(key);
     [[NSFileManager defaultManager] removeItemAtPath:imagePath error:nil];
+}
+
+- (void)clearCache:(NSNotification *)notification {
+    NSLog(@"flushing %d images out of the cache", [dictionary_ count]);
+    [dictionary_ removeAllObjects];
 }
 
 - (oneway void)release {
