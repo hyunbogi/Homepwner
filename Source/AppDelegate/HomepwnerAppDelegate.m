@@ -8,6 +8,7 @@
 
 #import "AppDelegate/HomepwnerAppDelegate.h"
 #import "View/ItemsViewController.h"
+#import "Store/PossessionStore.h"
 
 @implementation HomepwnerAppDelegate
 
@@ -27,12 +28,16 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application {}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {}
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [[PossessionStore defaultStore] saveChange];
+}
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {}
 
-- (void)applicationWillTerminate:(UIApplication *)application {}
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [[PossessionStore defaultStore] saveChange];
+}
 
 @end

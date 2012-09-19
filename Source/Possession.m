@@ -58,6 +58,26 @@
                            serialNumber:@""];
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        [self setPossessionName:[aDecoder decodeObjectForKey:@"possessionName"]];
+        [self setSerialNumber:[aDecoder decodeObjectForKey:@"serialNumber"]];
+        [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
+        dateCreated_ = [[aDecoder decodeObjectForKey:@"dateCreated"] retain];
+        [self setImageKey:[aDecoder decodeObjectForKey:@"imageKey"]];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:possessionName_ forKey:@"possessionName"];
+    [aCoder encodeObject:serialNumber_ forKey:@"serialNumber"];
+    [aCoder encodeObject:dateCreated_ forKey:@"dateCreated"];
+    [aCoder encodeObject:imageKey_ forKey:@"imageKey"];
+    [aCoder encodeInt:valueInDollars_ forKey:@"valueInDollars"];
+}
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ (%@): Worth $%d, recorded on %@",
             possessionName_, serialNumber_, valueInDollars_, dateCreated_];

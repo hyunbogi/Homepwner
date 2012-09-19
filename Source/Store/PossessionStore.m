@@ -29,19 +29,18 @@ static PossessionStore *defaultStore_ = nil;
         return defaultStore_;
     }
 
-    self = [super init];
-    if (self) {
-        allPossessions_ = [[NSMutableArray alloc] init];
-    }
-    
+    self = [super init];    
     return self;
 }
 
 - (NSArray *)allPossessions {
+    [self fetchPossessionsIfNecessary];
     return allPossessions_;
 }
 
 - (Possession *)createPossession {
+    [self fetchPossessionsIfNecessary];
+    
     Possession *p = [Possession randomPossession];
     [allPossessions_ addObject:p];
     
@@ -63,6 +62,26 @@ static PossessionStore *defaultStore_ = nil;
     [allPossessions_ removeObjectAtIndex:from];
     [allPossessions_ insertObject:p atIndex:to];
     [p release];
+}
+
+- (NSString *)possessionArchivePath {
+    return pathInDocumentDirectory(@"possessions.data");
+}
+
+- (BOOL)saveChange {
+    return [NSKeyedArchiver archiveRootObject:allPossessions_
+                                       toFile:[self possessionArchivePath]];
+}
+
+- (void)fetchPossessionsIfNecessary {
+    if (!allPossessions_) {
+        NSString *path = [self possessionArchivePath];
+        allPossessions_ = [[NSKeyedUnarchiver unarchiveObjectWithFile:path] retain];
+    }
+    
+    if (!allPossessions_) {
+        allPossessions_ = [[NSMutableArray alloc] init];
+    }
 }
 
 - (id)retain {

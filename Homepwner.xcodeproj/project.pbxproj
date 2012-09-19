@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F0349DE1609B88F00D0E74F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DC1609B88F00D0E74F /* Icon.png */; };
 		1F0349DF1609B88F00D0E74F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DD1609B88F00D0E74F /* Icon@2x.png */; };
+		1F77D6671609CCB300E0F759 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F77D6661609CCB300E0F759 /* FileHelpers.m */; };
 		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
 		1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */; };
 		1FD34D64160889B6005AE300 /* ImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D63160889B6005AE300 /* ImageStore.m */; };
@@ -28,6 +29,8 @@
 /* Begin PBXFileReference section */
 		1F0349DC1609B88F00D0E74F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resource/Image/Icon.png; sourceTree = "<group>"; };
 		1F0349DD1609B88F00D0E74F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resource/Image/Icon@2x.png"; sourceTree = "<group>"; };
+		1F77D6651609CCB300E0F759 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHelpers.h; path = Source/Util/FileHelpers.h; sourceTree = "<group>"; };
+		1F77D6661609CCB300E0F759 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHelpers.m; path = Source/Util/FileHelpers.m; sourceTree = "<group>"; };
 		1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDetailViewController.h; path = Source/View/ItemsDetailViewController.h; sourceTree = "<group>"; };
 		1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDetailViewController.m; path = Source/View/ItemsDetailViewController.m; sourceTree = "<group>"; };
 		1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemsDetailViewController.xib; path = Resource/Xib/ItemsDetailViewController.xib; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F77D6631609CC8900E0F759 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				1F77D6651609CCB300E0F759 /* FileHelpers.h */,
+				1F77D6661609CCB300E0F759 /* FileHelpers.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		1FE4D9061607432800DA2F83 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 				1FE4D94A1607468500DA2F83 /* Possession.m */,
 				1FE4D9301607439200DA2F83 /* AppDelegate */,
 				1FE4D94C160746BC00DA2F83 /* Store */,
+				1F77D6631609CC8900E0F759 /* Util */,
 				1FE4D9421607451400DA2F83 /* View */,
 			);
 			name = Source;
@@ -260,6 +273,7 @@
 				1FE4D94F160746E700DA2F83 /* PossessionStore.m in Sources */,
 				1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */,
 				1FD34D64160889B6005AE300 /* ImageStore.m in Sources */,
+				1F77D6671609CCB300E0F759 /* FileHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

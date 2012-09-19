@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Possession : NSObject {
+@interface Possession : NSObject <NSCoding> {
     NSString *possessionName_;
     NSString *serialNumber_;
     int valueInDollars_;
