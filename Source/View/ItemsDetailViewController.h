@@ -42,5 +42,6 @@
 - (IBAction)backgroundTapped:(id)sender;
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
+- (IBAction)removeImage:(id)sender;
 
 @end
