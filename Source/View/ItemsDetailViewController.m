@@ -137,7 +137,12 @@
     
     [nameField_ setText:[possession_ possessionName]];
     [serialNumberField_ setText:[possession_ serialNumber]];
-    [valuedField_ setText:[NSString stringWithFormat:@"%d", [possession_ valueInDollars]]];
+    if ([possession_ valueInDollars]) {
+        [valuedField_ setText:[NSString stringWithFormat:@"%@", [possession_ valueInDollars]]];
+    }
+    else {
+        [valuedField_ setText:@"0"];
+    }
     
     NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateStyle:NSDateFormatterMediumStyle];
@@ -163,7 +168,8 @@
     
     [possession_ setPossessionName:[nameField_ text]];
     [possession_ setSerialNumber:[serialNumberField_ text]];
-    [possession_ setValueInDollars:[[valuedField_ text] intValue]];
+    NSNumber *valueNum = [NSNumber numberWithInt:[[valuedField_ text] intValue]];
+    [possession_ setValueInDollars:valueNum];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker

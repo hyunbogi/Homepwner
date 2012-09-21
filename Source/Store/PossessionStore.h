@@ -11,18 +11,23 @@
 
 @interface PossessionStore : NSObject {
     NSMutableArray *allPossessions_;
+    
+    NSMutableArray *allAssetTypes_;
+    NSManagedObjectContext *context_;
+    NSManagedObjectModel *model_;
 }
 
 + (PossessionStore *)defaultStore;
+- (BOOL)saveChange;
+- (void)fetchPossessionsIfNecessary;
 
+#pragma mark Possessions
 - (NSArray *)allPossessions;
 - (Possession *)createPossession;
 - (void)removePossession:(Possession *)p;
-- (void)movePossessionAtIndex:(NSInteger)from
-                      toIndex:(NSInteger)to;
+- (void)movePossessionAtIndex:(NSInteger)from toIndex:(NSInteger)to;
 
-- (NSString *)possessionArchivePath;
-- (BOOL)saveChange;
-- (void)fetchPossessionsIfNecessary;
+#pragma mark Asset types
+- (NSArray *)allAssetTypes;
 
 @end
