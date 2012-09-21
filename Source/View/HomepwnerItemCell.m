@@ -34,6 +34,7 @@
 - (void)setPossession:(Possession *)possession {
     [valueLabel_ setText:[NSString stringWithFormat:@"$%d", [possession valueInDollars]]];
     [nameLabel_ setText:[possession possessionName]];
+    [imageView_ setImage:[possession thumbnail]];
 }
 
 - (void)layoutSubviews {
@@ -45,8 +46,9 @@
     float w = bounds.size.width;
     
     const float kValueWidth = 40.0;
-    
-    CGRect imageFrame = CGRectMake(kInset, kInset, 40, 40);
+    CGSize thumbnailSize = [Possession thumbnailSize];
+    float imageSpace = h - thumbnailSize.height;
+    CGRect imageFrame = CGRectMake(kInset, imageSpace / 2.0, thumbnailSize.width, thumbnailSize.height);
     [imageView_ setFrame:imageFrame];
     
     CGRect nameFrame = CGRectMake(imageFrame.size.width + imageFrame.origin.x + kInset,

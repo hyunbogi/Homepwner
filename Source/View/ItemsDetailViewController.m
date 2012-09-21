@@ -97,6 +97,7 @@
     if (imageKey) {
         [[ImageStore defaultImageStore] deleteImageForKey:imageKey];
         [possession_ setImageKey:nil];
+        [possession_ setThumbnailDataFromImage:nil];
     }
     
     [imageView_ setImage:nil];
@@ -184,6 +185,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
                                       forKey:[possession_ imageKey]];
     
     [imageView_ setImage:image];
+    
+    [possession_ setThumbnailDataFromImage:image];
     
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         [self dismissModalViewControllerAnimated:YES];

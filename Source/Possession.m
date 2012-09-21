@@ -39,6 +39,10 @@
     return [newPossession autorelease];
 }
 
++ (CGSize)thumbnailSize {
+    return CGSizeMake(40, 40);
+}
+
 - (id)initWithPossessionName:(NSString *)name
               valueInDollars:(int)value
                 serialNumber:(NSString *)sNumber {
@@ -66,6 +70,7 @@
         [self setValueInDollars:[aDecoder decodeIntForKey:@"valueInDollars"]];
         dateCreated_ = [[aDecoder decodeObjectForKey:@"dateCreated"] retain];
         [self setImageKey:[aDecoder decodeObjectForKey:@"imageKey"]];
+        thumbnailData_ = [[aDecoder decodeObjectForKey:@"thumbnailData"] retain];
     }
     return self;
 }
@@ -76,6 +81,63 @@
     [aCoder encodeObject:dateCreated_ forKey:@"dateCreated"];
     [aCoder encodeObject:imageKey_ forKey:@"imageKey"];
     [aCoder encodeInt:valueInDollars_ forKey:@"valueInDollars"];
+    [aCoder encodeObject:thumbnailData_ forKey:@"thumbnailData"];
+}
+
+- (UIImage *)thumbnail {
+    if (!thumbnailData_) {
+        return nil;
+    }
+    
+    if (!thumbnail_) {
+        thumbnail_ = [[UIImage imageWithData:thumbnailData_] retain];
+    }
+    return thumbnail_;
+}
+
+- (void)setThumbnail:(UIImage *)image {
+    [image retain];
+    [thumbnail_ release];
+    thumbnail_ = image;
+}
+
+- (void)setThumbnailData:(NSData *)data {
+    [data retain];
+    [thumbnailData_ release];
+    thumbnailData_ = data;
+}
+
+- (void)setThumbnailDataFromImage:(UIImage *)image {
+    CGSize originalImageSize = [image size];
+    
+    CGRect newRect = {0, };
+    newRect.origin = CGPointZero;
+    newRect.size = [[self class] thumbnailSize];
+    
+    float ratio = MAX(newRect.size.width / originalImageSize.width,
+                      newRect.size.height / originalImageSize.height);
+    
+    UIGraphicsBeginImageContext(newRect.size);
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:newRect
+                                                    cornerRadius:5.0];
+    [path addClip];
+    
+    CGRect projectRect = {0, };
+    projectRect.size.width = ratio * originalImageSize.width;
+    projectRect.size.height = ratio * originalImageSize.height;
+    projectRect.origin.x = (newRect.size.width - projectRect.size.width) / 2.0;
+    projectRect.origin.y = (newRect.size.height - projectRect.size.height) / 2.0;
+    
+    [image drawInRect:projectRect];
+    
+    UIImage *small = UIGraphicsGetImageFromCurrentImageContext();
+    [self setThumbnail:small];
+    
+    NSData* data = UIImagePNGRepresentation(small);
+    [self setThumbnailData:data];
+    
+    UIGraphicsEndImageContext();
 }
 
 - (NSString *)description {
@@ -88,6 +150,8 @@
     [serialNumber_ release];
     [dateCreated_ release];
     [imageKey_ release];
+    [thumbnail_ release];
+    [thumbnailData_ release];
     [super dealloc];
 }
 
