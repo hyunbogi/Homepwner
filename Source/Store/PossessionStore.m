@@ -124,6 +124,36 @@ static PossessionStore *defaultStore_ = nil;
     [p release];
 }
 
+- (NSArray *)allAssetTypes {
+    if (!allAssetTypes_) {
+        NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+        NSEntityDescription *e = [[model_ entitiesByName] objectForKey:@"AssetType"];
+        [request setEntity:e];
+        
+        NSError *error = nil;
+        NSArray *result = [context_ executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        allAssetTypes_ = [result mutableCopy];
+    }
+    
+    if ([allAssetTypes_ count] == 0) {
+        NSManagedObject *type = [NSEntityDescription insertNewObjectForEntityForName:@"AssetType"
+                                                              inManagedObjectContext:context_];
+        [type setValue:@"Jewelry" forKey:@"label"];
+        [allAssetTypes_ addObject:type];
+        
+        type = [NSEntityDescription insertNewObjectForEntityForName:@"AssetType"
+                                             inManagedObjectContext:context_];
+        [type setValue:@"Electronics" forKey:@"label"];
+        [allAssetTypes_ addObject:type];
+    }
+    
+    return allAssetTypes_;
+}
+
 - (NSString *)possessionArchivePath {
     return pathInDocumentDirectory(@"possessions.data");
 }

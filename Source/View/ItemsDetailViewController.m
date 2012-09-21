@@ -8,6 +8,7 @@
 
 #import "View/ItemsDetailViewController.h"
 #import "Possession.h"
+#import "View/AssetTypePicker.h"
 
 @implementation ItemsDetailViewController
 
@@ -103,6 +104,16 @@
     [imageView_ setImage:nil];
 }
 
+- (IBAction)showAssetTypePicker:(id)sender {
+    [[self view] endEditing:YES];
+    
+    AssetTypePicker *assetTypePicker = [[[AssetTypePicker alloc] init] autorelease];
+    [assetTypePicker setPossession:possession_];
+    
+    [[self navigationController] pushViewController:assetTypePicker
+                                           animated:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -129,6 +140,8 @@
     [imageView_ release];
     imageView_ = nil;
     
+    [assetTypeButton_ release];
+    assetTypeButton_ = nil;
     [super viewDidUnload];
 }
 
@@ -159,6 +172,14 @@
     else {
         [imageView_ setImage:nil];
     }
+    
+    NSString *typeLabel = [[possession_ assetType] valueForKey:@"label"];
+    if (!typeLabel) {
+        typeLabel = @"None";
+    }
+    
+    [assetTypeButton_ setTitle:[NSString stringWithFormat:@"Type: %@", typeLabel]
+                      forState:UIControlStateNormal];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -232,6 +253,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [imageView_ release];
     [possession_ release];
     
+    [assetTypeButton_ release];
     [super dealloc];
 }
 

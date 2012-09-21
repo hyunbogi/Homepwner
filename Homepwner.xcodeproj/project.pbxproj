@@ -13,6 +13,7 @@
 		1FB8EEB7160C475E00EC8405 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB8EEB6160C475E00EC8405 /* CoreData.framework */; };
 		1FB8EEBC160C484C00EC8405 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8EEBA160C484C00EC8405 /* Homepwner.xcdatamodeld */; };
 		1FB8EEC6160C4CDA00EC8405 /* Possession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8EEC5160C4CDA00EC8405 /* Possession.m */; };
+		1FB8EECA160C627500EC8405 /* AssetTypePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB8EEC9160C627500EC8405 /* AssetTypePicker.m */; };
 		1FC07EBB160B608900EC53F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC07EBA160B608900EC53F3 /* Default-568h@2x.png */; };
 		1FC6B90B160A254F001BB305 /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6B90A160A254F001BB305 /* HomepwnerItemCell.m */; };
 		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
@@ -39,6 +40,8 @@
 		1FB8EEBB160C484C00EC8405 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
 		1FB8EEC4160C4CDA00EC8405 /* Possession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Possession.h; sourceTree = "<group>"; };
 		1FB8EEC5160C4CDA00EC8405 /* Possession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Possession.m; sourceTree = "<group>"; };
+		1FB8EEC8160C627500EC8405 /* AssetTypePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssetTypePicker.h; path = Source/View/AssetTypePicker.h; sourceTree = "<group>"; };
+		1FB8EEC9160C627500EC8405 /* AssetTypePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssetTypePicker.m; path = Source/View/AssetTypePicker.m; sourceTree = "<group>"; };
 		1FC07EBA160B608900EC53F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1FC6B909160A254F001BB305 /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomepwnerItemCell.h; path = Source/View/HomepwnerItemCell.h; sourceTree = "<group>"; };
 		1FC6B90A160A254F001BB305 /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomepwnerItemCell.m; path = Source/View/HomepwnerItemCell.m; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */,
 				1FC6B909160A254F001BB305 /* HomepwnerItemCell.h */,
 				1FC6B90A160A254F001BB305 /* HomepwnerItemCell.m */,
+				1FB8EEC8160C627500EC8405 /* AssetTypePicker.h */,
+				1FB8EEC9160C627500EC8405 /* AssetTypePicker.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				1FC6B90B160A254F001BB305 /* HomepwnerItemCell.m in Sources */,
 				1FB8EEBC160C484C00EC8405 /* Homepwner.xcdatamodeld in Sources */,
 				1FB8EEC6160C4CDA00EC8405 /* Possession.m in Sources */,
+				1FB8EECA160C627500EC8405 /* AssetTypePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

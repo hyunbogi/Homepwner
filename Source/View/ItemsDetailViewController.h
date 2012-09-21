@@ -28,6 +28,7 @@
     IBOutlet UITextField *valuedField_;
     IBOutlet UILabel *dateLabel_;
     IBOutlet UIImageView *imageView_;
+    IBOutlet UIButton *assetTypeButton_;
     
     Possession *possession_;
 
@@ -43,5 +44,6 @@
 - (IBAction)save:(id)sender;
 - (IBAction)cancel:(id)sender;
 - (IBAction)removeImage:(id)sender;
+- (IBAction)showAssetTypePicker:(id)sender;
 
 @end
