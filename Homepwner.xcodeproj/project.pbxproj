@@ -10,6 +10,7 @@
 		1F0349DE1609B88F00D0E74F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DC1609B88F00D0E74F /* Icon.png */; };
 		1F0349DF1609B88F00D0E74F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0349DD1609B88F00D0E74F /* Icon@2x.png */; };
 		1F77D6671609CCB300E0F759 /* FileHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F77D6661609CCB300E0F759 /* FileHelpers.m */; };
+		1FC07EBB160B608900EC53F3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FC07EBA160B608900EC53F3 /* Default-568h@2x.png */; };
 		1FC6B90B160A254F001BB305 /* HomepwnerItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC6B90A160A254F001BB305 /* HomepwnerItemCell.m */; };
 		1FD34D51160872E3005AE300 /* ItemsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD34D4F160872E3005AE300 /* ItemsDetailViewController.m */; };
 		1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FD34D541608730F005AE300 /* ItemsDetailViewController.xib */; };
@@ -32,6 +33,7 @@
 		1F0349DD1609B88F00D0E74F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resource/Image/Icon@2x.png"; sourceTree = "<group>"; };
 		1F77D6651609CCB300E0F759 /* FileHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileHelpers.h; path = Source/Util/FileHelpers.h; sourceTree = "<group>"; };
 		1F77D6661609CCB300E0F759 /* FileHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileHelpers.m; path = Source/Util/FileHelpers.m; sourceTree = "<group>"; };
+		1FC07EBA160B608900EC53F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1FC6B909160A254F001BB305 /* HomepwnerItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomepwnerItemCell.h; path = Source/View/HomepwnerItemCell.h; sourceTree = "<group>"; };
 		1FC6B90A160A254F001BB305 /* HomepwnerItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomepwnerItemCell.m; path = Source/View/HomepwnerItemCell.m; sourceTree = "<group>"; };
 		1FD34D4E160872E3005AE300 /* ItemsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDetailViewController.h; path = Source/View/ItemsDetailViewController.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		1FE4D9311607439900DA2F83 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				1FC07EBA160B608900EC53F3 /* Default-568h@2x.png */,
 				1F0349DC1609B88F00D0E74F /* Icon.png */,
 				1F0349DD1609B88F00D0E74F /* Icon@2x.png */,
 			);
@@ -157,7 +160,7 @@
 		1FE4D9321607439E00DA2F83 /* String */ = {
 			isa = PBXGroup;
 			children = (
-				1FE4D934160743B000DA2F83 /* en,lproj */,
+				1FE4D934160743B000DA2F83 /* en.lproj */,
 			);
 			name = String;
 			sourceTree = "<group>";
@@ -172,12 +175,12 @@
 			name = Xib;
 			sourceTree = "<group>";
 		};
-		1FE4D934160743B000DA2F83 /* en,lproj */ = {
+		1FE4D934160743B000DA2F83 /* en.lproj */ = {
 			isa = PBXGroup;
 			children = (
 				1FE4D935160743BB00DA2F83 /* InfoPlist.strings */,
 			);
-			name = "en,lproj";
+			name = en.lproj;
 			sourceTree = "<group>";
 		};
 		1FE4D9421607451400DA2F83 /* View */ = {
@@ -261,6 +264,7 @@
 				1FD34D551608730F005AE300 /* ItemsDetailViewController.xib in Resources */,
 				1F0349DE1609B88F00D0E74F /* Icon.png in Resources */,
 				1F0349DF1609B88F00D0E74F /* Icon@2x.png in Resources */,
+				1FC07EBB160B608900EC53F3 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
