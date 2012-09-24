@@ -57,7 +57,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView
-        didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+        didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
     [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
