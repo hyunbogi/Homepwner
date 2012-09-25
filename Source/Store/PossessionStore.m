@@ -1,13 +1,5 @@
-//
-//  PossessionStore.m
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 17..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
-#import "Store/PossessionStore.h"
 #import "Possession.h"
+#import "Store/PossessionStore.h"
 #import "Store/ImageStore.h"
 
 static PossessionStore *defaultStore_ = nil;

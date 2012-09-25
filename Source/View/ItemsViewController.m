@@ -1,16 +1,8 @@
-//
-//  ItemsViewController.m
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 17..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
-#import "View/ItemsViewController.h"
 #import "Possession.h"
 #import "Store/PossessionStore.h"
-#import "View/ItemsDetailViewController.h"
 #import "View/HomepwnerItemCell.h"
+#import "View/ItemsDetailViewController.h"
+#import "View/ItemsViewController.h"
 
 @implementation ItemsViewController
 

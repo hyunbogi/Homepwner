@@ -1,11 +1,3 @@
-//
-//  Possession.m
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 21..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
 #import "Possession.h"
 
 @implementation Possession

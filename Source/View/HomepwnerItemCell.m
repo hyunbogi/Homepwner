@@ -1,13 +1,5 @@
-//
-//  HomepwnerItemCell.m
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 20..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
-#import "View/HomepwnerItemCell.h"
 #import "Possession.h"
+#import "View/HomepwnerItemCell.h"
 
 @implementation HomepwnerItemCell
 

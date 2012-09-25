@@ -1,13 +1,5 @@
-//
-//  Possession.h
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 21..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
-#import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
 
 @interface Possession : NSManagedObject
 

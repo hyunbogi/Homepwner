@@ -1,20 +1,13 @@
-//
-//  HomepwnerAppDelegate.m
-//  Homepwner
-//
-//  Created by Hyunbok Lee on 12. 9. 17..
-//  Copyright (c) 2012년 Hyunbok Lee. All rights reserved.
-//
-
 #import "AppDelegate/HomepwnerAppDelegate.h"
-#import "View/ItemsViewController.h"
 #import "Store/PossessionStore.h"
+#import "View/ItemsViewController.h"
 
 @implementation HomepwnerAppDelegate
 
 @synthesize window = window_;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application
+        didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"%@", NSStringFromSelector(_cmd));
     
     ItemsViewController *ivc = [[ItemsViewController alloc] init];
