@@ -32,7 +32,8 @@
 }
 
 - (void)setPossession:(Possession *)possession {
-    [valueLabel_ setText:[NSString stringWithFormat:@"$%@", [possession valueInDollars]]];
+    NSString *currencySybol = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+    [valueLabel_ setText:[NSString stringWithFormat:@"%@%@", currencySybol, [possession valueInDollars]]];
     [nameLabel_ setText:[possession possessionName]];
     [imageView_ setImage:[possession thumbnail]];
 }
