@@ -1,3 +1,3 @@
 #import <Foundation/Foundation.h>
 
-NSString* pathInDocumentDirectory(NSString *fileName);
+NSString* PathInDocumentDirectory(NSString *fileName);

@@ -27,7 +27,7 @@ static PossessionStore *defaultStore_ = nil;
     model_ = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
     NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:model_];
     
-    NSString *path = pathInDocumentDirectory(@"store.data");
+    NSString *path = PathInDocumentDirectory(@"store.data");
     NSURL *storeURL = [NSURL fileURLWithPath:path];
     
     NSError *error = nil;
@@ -147,7 +147,7 @@ static PossessionStore *defaultStore_ = nil;
 }
 
 - (NSString *)possessionArchivePath {
-    return pathInDocumentDirectory(@"possessions.data");
+    return PathInDocumentDirectory(@"possessions.data");
 }
 
 - (BOOL)saveChange {

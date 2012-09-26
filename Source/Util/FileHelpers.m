@@ -1,6 +1,6 @@
 #import "Util/FileHelpers.h"
 
-NSString* pathInDocumentDirectory(NSString *fileName) {
+NSString* PathInDocumentDirectory(NSString *fileName) {
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [documentDirectories objectAtIndex:0];
     

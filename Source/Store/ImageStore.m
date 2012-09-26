@@ -37,7 +37,7 @@ static ImageStore *defaultImageStore_ = nil;
 - (void)setImage:(UIImage *)image forKey:(NSString *)key {
     [dictionary_ setObject:image forKey:key];
     
-    NSString *imagePath = pathInDocumentDirectory(key);
+    NSString *imagePath = PathInDocumentDirectory(key);
     NSData *data = UIImageJPEGRepresentation(image, 0.5);
     [data writeToFile:imagePath atomically:YES];
 }
@@ -45,12 +45,12 @@ static ImageStore *defaultImageStore_ = nil;
 - (UIImage *)imageForKey:(NSString *)key {
     UIImage *result = [dictionary_ objectForKey:key];
     if (!result) {
-        result = [UIImage imageWithContentsOfFile:pathInDocumentDirectory(key)];
+        result = [UIImage imageWithContentsOfFile:PathInDocumentDirectory(key)];
         if (result) {
             [dictionary_ setObject:result forKey:key];
         }
         else {
-            NSLog(@"Error: unable to find %@", pathInDocumentDirectory(key));
+            NSLog(@"Error: unable to find %@", PathInDocumentDirectory(key));
         }
     }
     return result;
@@ -62,7 +62,7 @@ static ImageStore *defaultImageStore_ = nil;
     }
     [dictionary_ removeObjectForKey:key];
     
-    NSString *imagePath = pathInDocumentDirectory(key);
+    NSString *imagePath = PathInDocumentDirectory(key);
     [[NSFileManager defaultManager] removeItemAtPath:imagePath error:nil];
 }
 
