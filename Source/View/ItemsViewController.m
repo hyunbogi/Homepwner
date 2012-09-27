@@ -15,8 +15,7 @@
                                                                     action:@selector(addNewPossession:)];
         [[self navigationItem] setRightBarButtonItem:rightBarButtonItem];
         [rightBarButtonItem release];
-        
-        //[[self navigationItem] setTitle:@"Homepwner"];
+
         [[self navigationItem] setTitle:NSLocalizedString(@"Homepwner", @"Name of application")];
         
         [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
