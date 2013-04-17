@@ -229,12 +229,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        return YES;
-    }
-    else {
-        return (toInterfaceOrientation == UIInterfaceOrientationPortrait);
-    }
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 - (void)dealloc {
@@ -244,8 +239,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [dateLabel_ release];
     [imageView_ release];
     [possession_ release];
-    
     [assetTypeButton_ release];
+
     [super dealloc];
 }
 

@@ -18,9 +18,7 @@ static PossessionStore *defaultStore_ = nil;
 }
 
 - (id)init {
-    if (defaultStore_) {
-        return defaultStore_;
-    }
+    if (defaultStore_) return defaultStore_;
 
     self = [super init];
     
@@ -83,9 +81,7 @@ static PossessionStore *defaultStore_ = nil;
 
 - (void)movePossessionAtIndex:(NSInteger)from
                       toIndex:(NSInteger)to {
-    if (from == to) {
-        return;
-    }
+    if (from == to) return;
     
     Possession *p = [allPossessions_ objectAtIndex:from];
     [p retain];

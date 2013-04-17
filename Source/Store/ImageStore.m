@@ -16,9 +16,7 @@ static ImageStore *defaultImageStore_ = nil;
 }
 
 - (id)init {
-    if (defaultImageStore_) {
-        return defaultImageStore_;
-    }
+    if (defaultImageStore_) return defaultImageStore_;
     
     self = [super init];
     if (self) {
